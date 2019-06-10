@@ -4,7 +4,7 @@ const img_img1 = document.getElementById('img1');
 const img_img2 = document.getElementById('img2');
 const img_img3 = document.getElementById('img3');
 const input_voteButton = document.getElementById('voteButton');
-const allStores = [];
+const allImages = [];
 let votes = 25;
 const recentlySeen =[];
 
@@ -18,7 +18,7 @@ function ImageGenerator(name, type){
   this.votes = 0;
   this.views = 0;
   this.votePercent = parseInt(this.votes / this.views);
-  allStores.push(this);
+  allImages.push(this);
 }
 
 //Object Instances
@@ -47,8 +47,14 @@ const usb = new ImageGenerator('usb', 'gif');
 //Render those images to the dom (using a function?)
 function votingMachine(event){
   renderImages();
-  console.log(event.target);
-  console.log(votes);
+  let target = event.target.alt;
+  console.log(target);
+  for(let i = 0; i < allImages.length; i++){
+    if (target === allImages[i].alt){
+      allImages[i].votes++;
+      console.log(allImages[i].votes);
+    }
+  }
   votes--;
   if(votes === 0){
     div_images.removeEventListener('click', votingMachine);
@@ -74,13 +80,11 @@ function renderImages(){
 }
 //Helper functions
 function randomImage(){
-  let random = randNum(0, allStores.length -1);
-  let image = allStores[random];
-  // for(let i = 0; i < recentlySeen.length; i++){
-  //   while(image === recentlySeen[i]){
-  //     image = allStores[random];
-  //   }
-  // }
+  let random = randNum(0, allImages.length -1);
+  let image = allImages[random];
+  while(recentlySeen.includes === image){
+    image = allImages[random];
+  }
   recentlySeen.push(image);
   image.views++;
   if(recentlySeen.length > 6){
