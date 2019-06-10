@@ -8,15 +8,15 @@ const allStores = [];
 let votes = 25;
 
 //Object Constructor
-    //New object for each img with image name, and .type
-    //Needs a views and votes property for later data analysis
+//New object for each img with image name, and .type
+//Needs a views and votes property for later data analysis
 function ImageGenerator(name, type){
-    this.src = `./img/${name}.${type}`;
-    this.title = name;
-    this.alt = name;
-    this.votes = 0;
-    this.views = 0;
-    allStores.push(this);
+  this.src = `./img/${name}.${type}`;
+  this.title = name;
+  this.alt = name;
+  this.votes = 0;
+  this.views = 0;
+  allStores.push(this);
 };
 //Object Instances
 const bag = new ImageGenerator('bag', 'jpg');
@@ -40,18 +40,21 @@ const usb = new ImageGenerator('usb', 'gif');
 console.log(allStores);
 
 //Event handlers
-    //25 votes
-    //Needs to generate a new image every time the user votes
-    //Render those images to the dom (using a function?)
+//25 votes
+//Needs to generate a new image every time the user votes
+//Render those images to the dom (using a function?)
 
 //Functions
-    //Render images to the DOM
-    //Render the results once the 25 votes are used up
+//Render images to the DOM
+//Render the results once the 25 votes are used up
 
 //Helper functions
-    //Math random for choosing between the three images
-
+//Math random for choosing between the three images
+function randNum(max, min){
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log(randNum(4, 1));
 //Event listeners
-    //on click but later on will be on submit of the button
+//on click but later on will be on submit of the button
 
 //Function Calls
