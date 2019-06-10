@@ -1,8 +1,5 @@
 //Global Variables
 const div_images = document.getElementById('images');
-const img_img1 = document.getElementById('img1');
-const img_img2 = document.getElementById('img2');
-const img_img3 = document.getElementById('img3');
 const input_voteButton = document.getElementById('voteButton');
 const allImages = [];
 let votes = 25;
@@ -61,18 +58,15 @@ function votingMachine(event){
   }
 }
 
-//Functions
-//Render images to the DOM
-//Render the results once the 25 votes are used up
 function renderImages(){
   div_images.innerHTML = '';
   const images = [];
   for(let i = 0; i < 3; i++){ 
-    let image = randomImage();
+    let currentImage = randomImage();
     images[i] = document.createElement('img');
-    images[i].src = image.src;
-    images[i].alt = image.alt;
-    images[i].title = image.title;
+    images[i].src = currentImage.src;
+    images[i].alt = currentImage.alt;
+    images[i].title = currentImage.title;
     div_images.appendChild(images[i]);
   }
 
@@ -82,7 +76,8 @@ function renderImages(){
 function randomImage(){
   let random = randNum(0, allImages.length -1);
   let image = allImages[random];
-  while(recentlySeen.includes === image){
+  while(recentlySeen.includes(image)){
+    let random = randNum(0, allImages.length -1);
     image = allImages[random];
   }
   recentlySeen.push(image);
