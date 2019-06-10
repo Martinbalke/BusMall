@@ -1,0 +1,100 @@
+
+<!-- saved from url=(0022)http://127.0.0.1:5500/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link href="./Bus Mall_files/css" rel="stylesheet">
+    <link rel="stylesheet" href="./Bus Mall_files/reset.css" type="text/css">
+    <link rel="stylesheet" href="./Bus Mall_files/styles.css" type="text/css">
+    <title>Bus Mall</title>
+</head>
+<body>
+    <header>
+        <nav id="navBar">
+            <ul>
+                <a href="http://127.0.0.1:5500/"><li class="navIcon">Contact Us</li></a>
+                <a href="http://127.0.0.1:5500/"><li class="navIcon">Faq</li></a>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <div id="leftSideBar">
+            <h1 class="companyLogo">Buss Mall</h1>
+            <hr>
+            <h2>Our Mission</h2>
+            <p>yih! izzle dui. Aliquam shiznit purizzle, dawg tellivizzle, go to hizzle in, check it out fo shizzle my nizzle, fo shizzle mah nizzle fo rizzle, mah home g-dizzle. Quisque a go to hizzle eu mi mah nizzle vehicula. Dizzle accumsan crackalackin ipsizzle. Bow wow wow habitant morbi tristique black et that's the shizzle izzle malesuada famizzle ac check it out go to hizzle. In est. Curabitur check out this. Ut gangster felizzle, fo shizzle mah nizzle fo rizzle, mah home g-dizzle my shizz, suscipizzle izzle, cool pulvinar</p>
+
+        </div>
+        <div id="mainContainer">
+            <h2 class="textBox">Vote for your favorite product below</h2>
+            <div id="images">
+                <!-- <img src="" alt="" title="" id="img1">
+                <img src="" alt="" title="" id="img2">
+                <img src="" alt="" title="" id="img3"> -->
+            </div>
+            <!-- pie chart -->
+            <input type="button" name="vote" class="button" value="Vote Here" id="voteButton">
+            <p class="textBox">yih! izzle dui. Aliquam shiznit purizzle, dawg tellivizzle, go to hizzle in, check it out fo shizzle my nizzle, fo shizzle mah nizzle fo rizzle, mah home g-dizzle. Quisque a go to hizzle eu mi mah nizzle vehicula. Dizzle accumsan crackalackin ipsizzle. Bow wow wow habitant morbi tristique black et that's the shizzle izzle malesuada famizzle ac check it out go to hizzle. In est. Curabitur check out this. Ut gangster felizzle, fo shizzle mah nizzle fo rizzle, mah home g-dizzle my shizz, suscipizzle izzle, cool pulvinar</p>
+        </div>
+        <div id="Email">
+            <h2 class="companyLogo">Buss Mall</h2>
+            <form action="http://127.0.0.1:5500/">
+                <hr>
+                <p>Sign up for our monthly newsletter</p>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="emailForm">
+                <input type="submit" name="emailSubmit" class="button" id="emailSubmit">
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>
+            Copywrite © BusMall LLC 2019. <br>All rights reserved
+        </p> 
+        <div id="socialMedia">
+            <img src="./Bus Mall_files/fb-icon.png" alt="FaceBook">
+            <img src="./Bus Mall_files/gp-icon.png" alt="Google+">
+            <img src="./Bus Mall_files/twit-icon.png" alt="Twitter">
+            
+        </div>
+    </footer>
+ <script src="./Bus Mall_files/app.js"></script>   
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>

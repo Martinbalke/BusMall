@@ -46,47 +46,36 @@ const usb = new ImageGenerator('usb', 'gif');
 //Needs to generate a new image every time the user votes
 //Render those images to the dom (using a function?)
 function votingMachine(event){
-  renderImages();
-  console.log(event.target);
-  console.log(votes);
-  votes--;
-  if(votes === 0){
-    div_images.removeEventListener('click', votingMachine);
-  }
+  img_img1.innerHTML=randomImage();
 }
 
 //Functions
 //Render images to the DOM
 //Render the results once the 25 votes are used up
 function renderImages(){
-  div_images.innerHTML = '';
-  const images = [];
-  for(let i = 0; i < 3; i++){ 
-    let image = randomImage();
-    images[i] = document.createElement('img');
-    images[i].src = image.src;
-    images[i].alt = image.alt;
-    images[i].title = image.title;
-    div_images.appendChild(images[i]);
-  }
+  let image = randomImage();
+  let image1 = document.createElement('img');
+  image1.setAttribute = ('src', image.src);
+  div_images.appendChild(image1);
 
 
 }
+renderImages();
 //Helper functions
 function randomImage(){
   let random = randNum(0, allStores.length -1);
   let image = allStores[random];
-  // for(let i = 0; i < recentlySeen.length; i++){
-  //   while(image === recentlySeen[i]){
-  //     image = allStores[random];
-  //   }
-  // }
+  for(let i = 0; i < recentlySeen.length; i++){
+    if(image === recentlySeen[i]){
+      image = allStores[random];
+    }
+  }
   recentlySeen.push(image);
   image.views++;
   if(recentlySeen.length > 6){
     recentlySeen.splice(0,3);
   }
-  return image;
+
 }
 
 function randNum(min, max){
@@ -94,7 +83,6 @@ function randNum(min, max){
 }
 
 //Event listeners
-div_images.addEventListener('click', votingMachine);
+// div_images.addEventListener('click', votingMachine);
 
 //Function Calls
-renderImages();

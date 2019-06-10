@@ -1,0 +1,141 @@
+main{
+    width: 1080px;
+    margin: 0 auto;
+    font-family: 'Lato', sans-serif;
+    color: #fffff0;
+    background-color: #141414;
+}
+#navBar{
+    height: 30px;
+    width: 100%;
+    background-color: #141414;
+}
+#navBar a li{
+    color:  #fffff0;
+list-style-type: none;
+text-decoration: none;
+margin: 5px;
+line-height: 10px;
+text-align: center;
+}
+.navIcon{
+    background-color:  #372520;
+ height: 15px;
+ width: 100px;
+ float: right;
+ border-radius: 5px;
+ padding-top: 5px;
+}
+#leftSideBar{
+ width: 240px;
+ float: left;
+ height: 540px;
+ background-color: #BFB4AE;
+ border-radius: 5px;
+}
+#leftSideBar h2{
+    margin-top: 5px;
+    font-size: 1.3em;
+    text-align: center;
+}
+#leftSideBar p{
+    padding: 5px;
+    text-indent: 5px;
+}
+hr{
+    border: 1px solid  #372520;
+    margin: 0 10px;
+}
+.companyLogo{
+    font-family: 'Orbitron', sans-serif;
+    color: #365F6F;
+    font-size: 1.5em;
+    padding: 10px;
+}
+#mainContainer{
+    background-image: url(../img/photo-1462043103994-3eb31d19a057.jpeg);
+    padding-top: 30px;
+
+}
+#mainContainer h2{
+    width: 280px;
+    height: 48px;
+    position: relative;
+    left: 250px;
+   display: grid;
+   place-content: center;
+    background-color: #BFB4AE;
+    margin-bottom: 30px;
+
+}
+#mainContainer input{
+    width: 150;
+    height: 50px;
+    position: relative;
+    left: 335px;
+    margin-top: 30px;
+}
+#mainContainer p{
+    width: 680px;
+    height: 150px;
+    padding: 5px;
+    display: grid;
+    text-indent: 10px;
+    place-content: center;
+    position: relative;
+    left: 60px;
+    margin-top: 30px;
+}
+.textBox{
+    border-radius: 5px;
+ background-color: #BFB4AE;
+}
+
+#images{
+
+}
+#images img{
+    background-color: black;
+    height: 205px;
+    width: 200px;
+    margin-left: 50px;
+}
+#Email{
+clear: left;
+height: 200px;
+width: 300px;
+display: grid;
+place-content: center;
+padding-left: 10px;
+}
+#emailSubmit{
+    width: 100px;
+    height: 30px;
+    float: right;
+    margin-top: 5px;
+}
+#emailForm{
+    margin-top: 10px;
+    width: 170px;
+    height: 40px;
+    border-radius: 5px;
+}
+.button{
+    border-radius: 5px;
+    background-color: #372520;
+    color: #fffff0;
+    border: none;
+}
+footer{
+    text-align: center;
+    width: 350px;
+    height: 70px;
+    margin-left: 500px;
+    margin-top: 30px;
+    color: #BFB4AE;
+}
+#socialMedia{
+position: relative;
+top: -60px;
+left: 545px;
+}
