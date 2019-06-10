@@ -11,7 +11,7 @@ let votes = 25;
     //New object for each img with image name, and .type
     //Needs a views and votes property for later data analysis
 function ImageGenerator(name, type){
-    this.src = `${name}.${type}`;
+    this.src = `./img/${name}.${type}`;
     this.title = name;
     this.alt = name;
     this.votes = 0;
@@ -19,7 +19,25 @@ function ImageGenerator(name, type){
     allStores.push(this);
 };
 //Object Instances
-
+const bag = new ImageGenerator('bag', 'jpg');
+const banana = new ImageGenerator('banana', 'jpg');
+const bathroom = new ImageGenerator('bathroom', 'jpg');
+const boots = new ImageGenerator('boots', 'jpg');
+const breakfast = new ImageGenerator('breakfast', 'jpg');
+const bubblegum = new ImageGenerator('bubblegum', 'jpg');
+const chair = new ImageGenerator('chair', 'jpg');
+const cthulhu = new ImageGenerator('cthulhu', 'jpg');
+const dogDuck = new ImageGenerator('dog-duck', 'jpg');
+const dragon = new ImageGenerator('dragon', 'jpg');
+const pen = new ImageGenerator('pen', 'jpg');
+const petSweep = new ImageGenerator('pet-sweep', 'jpg');
+const scissors = new ImageGenerator('scissors', 'jpg');
+const shark = new ImageGenerator('shark', 'jpg');
+const sweep = new ImageGenerator('sweep', 'png');
+const tauntaun = new ImageGenerator('tauntaun', 'jpg');
+const unicorn = new ImageGenerator('unicorn', 'jpg');
+const usb = new ImageGenerator('usb', 'gif');
+console.log(allStores);
 
 //Event handlers
     //25 votes
