@@ -74,8 +74,8 @@ function renderChart(){
     for(let i = 0; i < allImages.length; i++){
       
       labels.push(allImages[i].product);
-      productVotes.push(updateViews[i].votes + allImages[i].votes);
-      views.push(updateViews[i].views + allImages[i].views);
+      productVotes.push(allImages[i].votes += updateViews[i].votes);
+      views.push(allImages[i].views += updateViews[i].views);
     }
   }
   console.log(updateViews);
