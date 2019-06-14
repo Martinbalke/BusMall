@@ -9,6 +9,7 @@ const productVotes = [];
 const views = [];
 const chart_myChart = document.getElementById('myChart').getContext('2d');
 
+
 //Object Constructor
 function ImageGenerator(product, name, type){
   this.product = product;
@@ -55,17 +56,29 @@ function votingMachine(event){
   votes--;
   if(votes === 0){
     renderChart();
+    localStorage.setItem('allImages', JSON.stringify(allImages));
     div_images.removeEventListener('click', votingMachine);
   }
 }
 
 
+const updateViews = JSON.parse(localStorage.getItem('allImages'));
 function renderChart(){
-  for(let i = 0; i < allImages.length; i++){
-    labels.push(allImages[i].product);
-    productVotes.push(allImages[i].votes);
-    views.push(allImages[i].views);
+  if (localStorage.getItem('allImages') === null){
+    for(let i = 0; i < allImages.length; i++){
+      labels.push(allImages[i].product);
+      productVotes.push(allImages[i].votes);
+      views.push(allImages[i].views);
+    } 
+  }else{
+    for(let i = 0; i < allImages.length; i++){
+      
+      labels.push(allImages[i].product);
+      productVotes.push(updateViews[i].votes + allImages[i].votes);
+      views.push(updateViews[i].views + allImages[i].views);
+    }
   }
+  console.log(updateViews);
   //chart
   const chart = new Chart(chart_myChart, {
     // The type of chart we want to create
