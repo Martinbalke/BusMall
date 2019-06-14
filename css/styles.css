@@ -1,130 +1,154 @@
-main{
-    width: 1080px;
-    margin: 0 auto;
-    font-family: 'Lato', sans-serif;
-    color: #fffff0;
-    background-color: #141414;
+
+#company{
+    height: 11vh;
+    width: 100vw;
+    background-image: radial-gradient(#f2f2f2,#F6F6F6);
 }
-#navBar{
-    height: 30px;
-    width: 100%;
-    background-color: #141414;
+#company img{
+    padding-left: 5px;
 }
-#navBar a li{
-    color:  #fffff0;
-list-style-type: none;
-text-decoration: none;
-margin: 5px;
-line-height: 10px;
-text-align: center;
+#nav{
+    height: 5vh;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
 }
-.navIcon{
-    background-color:  #372520;
- height: 15px;
- width: 100px;
- float: right;
- border-radius: 5px;
- padding-top: 5px;
+#nav a{
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1.5px;
 }
-#leftSideBar{
- width: 240px;
- float: left;
- height: 540px;
- background-color: #BFB4AE;
- border-radius: 5px;
-}
-#leftSideBar h2{
-    margin-top: 5px;
-    font-size: 1.3em;
-    text-align: center;
-}
-#leftSideBar p{
-    padding: 5px;
-    text-indent: 5px;
-}
-hr{
-    border: 1px solid  #372520;
-    margin: 0 10px;
-}
-.companyLogo{
-    font-family: 'Orbitron', sans-serif;
-    color: #365F6F;
-    font-size: 1.5em;
-    padding: 10px;
-}
-#mainContainer{
-    background-image: url(../img/photo-1462043103994-3eb31d19a057.jpeg);
-    padding-top: 30px;
+#nav li{
+    list-style-type: none;
+     padding: 15px;
+   color: #1D2028;
 
 }
-#mainContainer h2{
-    width: 280px;
-    height: 48px;
-    position: relative;
-    left: 250px;
-   display: grid;
-   place-content: center;
-    background-color: #BFB4AE;
-    margin-bottom: 30px;
-
+#nav a:hover{
+    border-bottom: 3px solid #3669CF;
 }
-#mainContainer input{
-    width: 150;
-    height: 50px;
-    position: relative;
-    left: 335px;
-    margin-top: 30px;
-}
-#mainContainer p{
-    width: 680px;
-    height: 150px;
-    padding: 5px;
+#heroImage{
+    width: 100vw;
+    height: 700px;
+    background-image: url(../img/ana-martin-161065-unsplash.jpg);
     display: grid;
-    text-indent: 10px;
     place-content: center;
-    position: relative;
-    left: 60px;
-    margin-top: 30px;
+    color: #f1f1f1;
 }
-.textBox{
-    border-radius: 5px;
- background-color: #BFB4AE;
+#heroImage h1{
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-size: 4em;
+    padding: 10px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 5px #999;
+
 }
+#heroImage p{
+    font-family: 'Raleway', sans-serif;
+    width: 500px;
+    line-height: 20px;
+    font-size: 1.2em;
+    font-weight: 100;
+    letter-spacing: 3px;
+    padding: 10px;
+    border: 1px #f3f3f3 solid;
+}
+#images1{
+ height: 400px;
+ width: 100vw;
+}
+#images1 h2{
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-size: 2em;
+    padding: 10px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 5px #999;
+    color: #0C3543;
+    width: 600px;
+    margin: 20px auto;
 
-#images{
-
+   
 }
 #images img{
     background-color: black;
     height: 205px;
     width: 200px;
     margin-left: 50px;
+    box-shadow: 0px 1px 5px #999;
+    position: relative;
+    left: 350px;
+}  
+#images img:hover{
+    box-shadow: 0px 5px 10px #3669CF;
+}  
+canvas{
+    border: 1px solid red;
 }
-#Email{
-clear: left;
-height: 200px;
-width: 300px;
-display: grid;
-place-content: center;
-padding-left: 10px;
+#email{
+    display: grid;
+    place-content: center;
+    color: #f1f1f1;
+    width: 100vw;
+    height: 700px;
+    background-image: url(../img/annie-spratt-64512-unsplash.jpg)
 }
-#emailSubmit{
-    width: 100px;
-    height: 30px;
-    float: right;
-    margin-top: 5px;
+#email label{
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-size: 2em;
+    padding: 10px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 5px #999;
+    
 }
-#emailForm{
-    margin-top: 10px;
-    width: 170px;
-    height: 40px;
+#contact{
+    width: 400px;
+    height: 60px;
+    box-shadow: 0px 1px 5px #999;
+    position: relative;
+    top: 5px;
+    border: none;
     border-radius: 5px;
+}
+#contact::placeholder{
+    display: grid;
+    place-content: center;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    letter-spacing: 3px;
+    color: rgba(0, 0, 0, .25)
+
 }
 .button{
-    border-radius: 5px;
-    background-color: #372520;
-    color: #fffff0;
+    font-family: 'Raleway', sans-serif;
+    background-color: #3669CF;
+    line-height: 20px;
+    text-indent: 0px;
+    font-size: 1.2em;
+    font-weight: 100;
+    letter-spacing: 2px;
+    padding: 10px;
+    color: #f1f1f1;
+    box-shadow: 0px 1px 5px #999;
     border: none;
+    border-radius: 5px;
+    background-image: radial-gradient(#12303D, #13202B)
+}
+#submitButton{
+    position: relative;
+    top: 5px;
+    right: 30px;
 }
 footer{
     text-align: center;

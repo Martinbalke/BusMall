@@ -16,7 +16,7 @@ Collect data on the most valuable products so that I can know which products we 
 
 Have a website that is engaging so that I can keep potential users on my site for long enough to gather information
 
-##As a Focus Group member 
+## As a Focus Group member 
 
 Feel like my input matters, so that I can feel like my voice is being heard by those higher up
 
