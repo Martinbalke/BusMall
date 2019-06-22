@@ -1,9 +1,14 @@
+'use strict';
 //Global Variables
 const div_images = document.getElementById('images');
-const input_voteButton = document.getElementById('voteButton');
 const allImages = [];
 let votes = 25;
 const recentlySeen =[];
+const labels = [];
+const productVotes = [];
+const views = [];
+const chart_myChart = document.getElementById('myChart').getContext('2d');
+
 
 //Object Constructor
 function ImageGenerator(product, name, type){
@@ -20,24 +25,24 @@ function ImageGenerator(product, name, type){
 
 
 //Object Instances
-const bag = new ImageGenerator('StarWars Bag','bag', 'jpg');
-const banana = new ImageGenerator('Banana Slicer', 'banana', 'jpg');
-const bathroom = new ImageGenerator('Bathroom Ipad Stand','bathroom', 'jpg');
-const boots = new ImageGenerator('Open Toe Rainboots', 'boots', 'jpg');
-const breakfast = new ImageGenerator('Breakfast Cooker','breakfast', 'jpg');
-const bubblegum = new ImageGenerator('Meatball Bubblegum','bubblegum', 'jpg');
-const chair = new ImageGenerator('Art Deco Chair', 'chair', 'jpg');
-const cthulhu = new ImageGenerator('Cthulhu Action Figure','cthulhu', 'jpg');
-const dogDuck = new ImageGenerator('Dog Duck Bill','dog-duck', 'jpg');
-const dragon = new ImageGenerator('Canned Dragon Meat','dragon', 'jpg');
-const pen = new ImageGenerator('Pen Utensils','pen', 'jpg');
-const petSweep = new ImageGenerator('Pet Sweeper','pet-sweep', 'jpg');
-const scissors = new ImageGenerator('Pizza Scissors','scissors', 'jpg');
-const shark = new ImageGenerator('Shark Blanket','shark', 'jpg');
-const sweep = new ImageGenerator('Baby Sweeper','sweep', 'png');
-const tauntaun = new ImageGenerator('Star Wars Blanket','tauntaun', 'jpg');
-const unicorn = new ImageGenerator('Unicorn Meat','unicorn', 'jpg');
-const usb = new ImageGenerator('Monster USB','usb', 'gif');
+new ImageGenerator('StarWars Bag','bag', 'jpg');
+new ImageGenerator('Banana Slicer', 'banana', 'jpg');
+new ImageGenerator('Bathroom Ipad Stand','bathroom', 'jpg');
+new ImageGenerator('Open Toe Rainboots', 'boots', 'jpg');
+new ImageGenerator('Breakfast Cooker','breakfast', 'jpg');
+new ImageGenerator('Meatball Bubblegum','bubblegum', 'jpg');
+new ImageGenerator('Art Deco Chair', 'chair', 'jpg');
+new ImageGenerator('Cthulhu Action Figure','cthulhu', 'jpg');
+new ImageGenerator('Dog Duck Bill','dog-duck', 'jpg');
+new ImageGenerator('Canned Dragon Meat','dragon', 'jpg');
+new ImageGenerator('Pen Utensils','pen', 'jpg');
+new ImageGenerator('Pet Sweeper','pet-sweep', 'jpg');
+new ImageGenerator('Pizza Scissors','scissors', 'jpg');
+new ImageGenerator('Shark Blanket','shark', 'jpg');
+new ImageGenerator('Baby Sweeper','sweep', 'png');
+new ImageGenerator('Star Wars Blanket','tauntaun', 'jpg');
+new ImageGenerator('Unicorn Meat','unicorn', 'jpg');
+new ImageGenerator('Monster USB','usb', 'gif');
 
 //Event handlers
 function votingMachine(event){
@@ -50,22 +55,70 @@ function votingMachine(event){
   }
   votes--;
   if(votes === 0){
-    renderList();
+    renderChart();
+    localStorage.setItem('allImages', JSON.stringify(allImages));
     div_images.removeEventListener('click', votingMachine);
   }
 }
 
-//functions
-function renderList(){
-  const ul_Results = document.createElement('ul');
-  div_images.appendChild(ul_Results);
 
-  for(let i = 0; i < allImages.length; i++){  
-    const li_Image = document.createElement('li');
-    li_Image.textContent = `${allImages[i].product} got ${allImages[i].votes} votes.`;
-    ul_Results.appendChild(li_Image);
+const updateViews = JSON.parse(localStorage.getItem('allImages'));
+function renderChart(){
+  if (localStorage.getItem('allImages') === null){
+    for(let i = 0; i < allImages.length; i++){
+      labels.push(allImages[i].product);
+      productVotes.push(allImages[i].votes);
+      views.push(allImages[i].views);
+    } 
+  }else{
+    for(let i = 0; i < allImages.length; i++){
+      
+      labels.push(allImages[i].product);
+      productVotes.push(allImages[i].votes += updateViews[i].votes);
+      views.push(allImages[i].views += updateViews[i].views);
+    }
   }
+  console.log(updateViews);
+  //chart
+  const chart = new Chart(chart_myChart, {
+    // The type of chart we want to create
+    type: 'bar',
+  
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Votes',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: productVotes
+      },
+      {
+        label: 'Views',
+        backgroundColor: 'rgb(0, 99, 132)',
+        borderColor: 'rgb(0, 99, 132)',
+        data: views
+      }]
+    },
+  
+    // Configuration options go here
+    options: {}
+  });
 }
+
+
+
+
+//functions
+// function renderList(){
+//   const ul_Results = document.createElement('ul');
+//   div_images.appendChild(ul_Results);
+
+//   for(let i = 0; i < allImages.length; i++){  
+//     const li_Image = document.createElement('li');
+//     li_Image.textContent = `${allImages[i].product} got ${allImages[i].votes} votes.`;
+//     ul_Results.appendChild(li_Image);
+//   }
+// }
 
 function renderImages(){
   div_images.innerHTML = '';
